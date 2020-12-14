@@ -13,11 +13,22 @@ namespace MadLibs.Controllers
         {
             return View();
         }
-        [Route("/test")]
-        public ActionResult Test()
+        [Route("/dino")]
+        public ActionResult Dino(string adjective, string pluralNoun, string nounTwo, string adjectiveTwo, string nounThree, string nounFour)
         {
-            return View();
+            DinoVariable myDinoVariable = new DinoVariable();
+            myDinoVariable.Adjective = adjectiveTwo;
+            myDinoVariable.PluralNoun = pluralNoun;
+            myDinoVariable.NounTwo = nounTwo;
+            myDinoVariable.AdjectiveTwo = adjectiveTwo;
+            myDinoVariable.NounThree = nounThree;
+            myDinoVariable.NounFour = nounFour;
+            return View(myDinoVariable);
         }
+
+        [Route("/dinoform")]
+        public ActionResult DinoForm() { return View(); }
+
         [Route("/mad")]
         public ActionResult Mad(string noun, string pluralNoun, string verb, string verbTwo, string adjective, string adjectiveTwo, string pluralNounTwo, string adjectiveThree)
         {
