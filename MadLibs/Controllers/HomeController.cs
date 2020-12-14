@@ -5,8 +5,21 @@ namespace MadLibs.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("/hello")]
+        public string Hello() { return "Hello, is this working friend friend!"; }
+
+        [Route("/")]
+        public ActionResult Index()
+        {
+            return View();
+        }
+        [Route("/test")]
+        public ActionResult Test()
+        {
+            return View();
+        }
         [Route("/mad")]
-        public ActionResult Mad()
+        public ActionResult Mad(string noun, string pluralNoun, string verb, string verbTwo, string adjective, string adjectiveTwo, string pluralNounTwo, string adjectiveThree)
         {
             MadLibsVariable myMadLibs = new MadLibsVariable();
             myMadLibs.Noun = noun;
