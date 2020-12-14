@@ -1,2 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
-using FriendLetter.Models;
+
+namespace MadLibs.Controllers
+{
+    public class HomeController : Controller
+    {
+        [Route("/mad")]
+        public ActionResult Mad()
+        {
+
+        }
+        [Route("/form")]
+        public ActionResult Form() { return View(); }
+    }
+}
